@@ -149,25 +149,24 @@ Fetches a list of questions
 }
 ```
 
-DELETE "/questions/<int:question_id>"
+DELETE '/questions/<int:question_id>'
     - Request Parameters: question_id
     - Response Body:  
 
 ```json
-
-"deleted": question_id, 
+{
+  "deleted": question_id, 
   "questions": [...], 
   "success": true, 
   "totalQuestions": number of remaning questions
+}
 
 ```
-
-POST "/questions"
+POST '/questions'
     - Request Parameters: question_id , answer , category , and difficulty
     - Response Body:  
 
 ```json
-
 {
    "questions" : [],
    "totalQuestions" : number of remaning questions,
