@@ -149,7 +149,8 @@ Fetches a list of questions
 }
 ```
 
-DELETE '/questions/<int:question_id>'
+* DELETE '/questions/<int:question_id>'
+  Delete a question
     - Request Parameters: question_id
     - Response Body:  
 
@@ -162,7 +163,8 @@ DELETE '/questions/<int:question_id>'
 }
 
 ```
-POST '/questions'
+* POST '/questions'
+Post new question
     - Request Parameters: question_id , answer , category , and difficulty
     - Response Body:  
 
@@ -176,7 +178,73 @@ POST '/questions'
 
 ```
 
+* POST '/questions/search'
+Post new question
+    - Request Parameters: searchTerm
+    - Response Body:  
+    
+```json
+{
+  "questions": [
+    {
+      "answer": "Muhammad Ali", 
+      "category": 4, 
+      "difficulty": 1, 
+      "id": 9, 
+      "question": "What boxer's original name is Cassius Clay?"
+    },
+    etc ...
+  ], 
+  "success": true, 
+  "total_questions": 15
+}
+```
+* GET '/categories/<int:id>/questions'
 
+Get list of questions based on category id 
+    - Request Parameters: searchTerm
+    - Response Body:  
+    
+```json
+{
+  "questions": [
+    {
+      "answer": "The Liver", 
+      "category": 1, 
+      "difficulty": 4, 
+      "id": 20, 
+      "question": "What is the heaviest organ in the human body?"
+    }, 
+  "success": true, 
+  "total_questions": 14
+}
 
+```
 
+* POST '/quizzes' 
+play a quiz 
+    - Request Parameters: category_id: question's category id and previous_quesion
+    - Response Body: 
+    
+```json 
+    {
+      "answer": "The Liver", 
+      "category": 1, 
+      "difficulty": 4, 
+      "id": 20, 
+      "question": "What is the heaviest organ in the human body?"
+    }
+```
+##Errors handling
+
+All endpoints are provided with error handlers functions 
+
+- Response Body: 
+```json 
+    {
+      "error": 405, 
+      "message": "method not allowed", 
+      "success": false
+    }
+```
 
