@@ -169,10 +169,10 @@ POST "/questions"
 ```json
 
 {
-        'questions' : current_selections,
-        'totalQuestions' : len(Question.query.all()),
-        'success' : True,
-        'created' : question.id
+   "questions" : [],
+   "totalQuestions" : number of remaning questions,
+   "success" : True,
+   "created" : question.id
 }
 
 ```
