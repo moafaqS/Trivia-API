@@ -108,19 +108,74 @@ Fetches a dictionary of categories
 ```json
 {
   "categories": {
-  "1": "Science",
-  "2": "Art",
-  "3": "Geography",
-  "4": "History",
-  "5": "Entertainment",
-  "6": "Sports"
-},
-" success": true
+    "1": "Science", 
+    "2": "Art", 
+    "3": "Geography", 
+    "4": "History", 
+    "5": "Entertainment", 
+    "6": "Sports"
+  }, 
+  "success": true
 }
 ```
 
+* GET '/questions?page=1' 
+Fetches a list of questions
+    - Request Parameters: page number (each page has 10 questions)
+    - Response Body:
+    
+```json
+{
+  "categories": {
+    "1": "Science", 
+    "2": "Art", 
+    "3": "Geography", 
+    "4": "History", 
+    "5": "Entertainment", 
+    "6": "Sports"
+  }, 
+  "questions": [
+    {
+      "answer": "Muhammad Ali", 
+      "category": 4, 
+      "difficulty": 1, 
+      "id": 9, 
+      "question": "What boxer's original name is Cassius Clay?"
+    },
+    etc ...
+  ], 
+  "success": true, 
+  "total_questions": 15
+}
+```
 
+DELETE "/questions/<int:question_id>"
+    - Request Parameters: question_id
+    - Response Body:  
 
+```json
+
+"deleted": question_id, 
+  "questions": [...], 
+  "success": true, 
+  "totalQuestions": number of remaning questions
+
+```
+
+POST "/questions"
+    - Request Parameters: question_id , answer , category , and difficulty
+    - Response Body:  
+
+```json
+
+{
+        'questions' : current_selections,
+        'totalQuestions' : len(Question.query.all()),
+        'success' : True,
+        'created' : question.id
+}
+
+```
 
 
 
