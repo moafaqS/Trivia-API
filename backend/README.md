@@ -101,7 +101,23 @@ python test_flaskr.py
 
 ## API Documentation
 * GET '/categories'
-
+Fetches a dictionary of categories
+    - Request Parameters: None
+    - Response Body:
+    
+```json
+{
+  "categories": {
+  "1": "Science",
+  "2": "Art",
+  "3": "Geography",
+  "4": "History",
+  "5": "Entertainment",
+  "6": "Sports"
+},
+" success": true
+}
+```
 
 
 
