@@ -175,7 +175,7 @@ Post new question
 
 ```json
 {
-   "questions" : "questions": {
+   "questions" : {
       "answer": "Muhammad Ali", 
       "category": 4, 
       "difficulty": 1, 
@@ -183,7 +183,7 @@ Post new question
       "question": "What boxer's original name is Cassius Clay?"
     },
    "totalQuestions" : 15,
-   "success" : True,
+   "success" : true,
    "created" : 15
 }
 
