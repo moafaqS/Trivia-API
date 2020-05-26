@@ -209,11 +209,11 @@ Post new question
   "total_questions": 15
 }
 ```
-* GET '/categories/<int:id>/questions'
 
+* GET '/categories/<int:id>/questions'
 Get list of questions based on category id 
-    - Request Parameters: searchTerm
-    - Response Body:  
+    - Request Parameters : searchTerm
+    - Response Body : 
     
 ```json
   {
