@@ -108,9 +108,6 @@ def create_app(test_config=None):
     try:
       question = Question.query.filter(Question.id == question_id).one_or_none()
 
-      if question is None:
-        abort(422)
-
       question.delete()
       selection = Question.query.order_by(Question.id).all()
       current_selections = pagination(request,selection)
@@ -123,7 +120,7 @@ def create_app(test_config=None):
         })
 
     except:
-      abort(422)
+      abort(404)
 
   '''
   @TODO: 
@@ -249,14 +246,15 @@ def create_app(test_config=None):
 
       #check the if the randomQuestion is a previous_questions
       IsFound = True
-      i = 0
-
+     
       while IsFound:
         if randomQuestion.id in previous_questions:
             randomQuestion = random.choice(questions)
-            if i >= len(previous_questions):
-              IsFound = False
-            i = i + 1
+            if len(questions) == len(previous_questions):
+              return jsonify({
+                    'question': False
+                })
+           
 
         else:
             IsFound = False

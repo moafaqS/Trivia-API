@@ -79,9 +79,9 @@ class TriviaTestCase(unittest.TestCase):
         res = self.client().delete('/questions/10000')
         data = json.loads(res.data)
 
-        self.assertEqual(res.status_code , 422)
+        self.assertEqual(res.status_code , 404)
         self.assertEqual(data['success'],False)
-        self.assertEqual(data['message'],'Unprocessable')
+        self.assertEqual(data['message'],'Not Found')
 
     def test_post_new_question(self):
         question = {
@@ -133,7 +133,7 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['success'],False)
 
     def test_questions_per_categorie(self):
-        res = self.client().get('categories/1/questions')
+        res = self.client().get('/categories/1/questions')
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code , 200)
@@ -143,7 +143,7 @@ class TriviaTestCase(unittest.TestCase):
 
 
     def test_questions_per_not_exist_categorie(self):
-        res = self.client().get('categories/10/questions')
+        res = self.client().get('/categories/10/questions')
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code , 404)

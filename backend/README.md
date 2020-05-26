@@ -142,7 +142,6 @@ Fetches a list of questions
       "id": 9, 
       "question": "What boxer's original name is Cassius Clay?"
     },
-    etc ...
   ], 
   "success": true, 
   "total_questions": 15
@@ -156,10 +155,16 @@ Fetches a list of questions
 
 ```json
 {
-  "deleted": question_id, 
-  "questions": [...], 
+  "deleted": 9, 
+  "questions": {
+      "answer": "Muhammad Ali", 
+      "category": 4, 
+      "difficulty": 1, 
+      "id": 9, 
+      "question": "What boxer's original name is Cassius Clay?"
+    }, 
   "success": true, 
-  "totalQuestions": number of remaning questions
+  "totalQuestions": 14
 }
 
 ```
@@ -170,10 +175,16 @@ Post new question
 
 ```json
 {
-   "questions" : [],
-   "totalQuestions" : number of remaning questions,
+   "questions" : "questions": {
+      "answer": "Muhammad Ali", 
+      "category": 4, 
+      "difficulty": 1, 
+      "id": 9, 
+      "question": "What boxer's original name is Cassius Clay?"
+    },
+   "totalQuestions" : 15,
    "success" : True,
-   "created" : question.id
+   "created" : 15
 }
 
 ```
@@ -193,7 +204,6 @@ Post new question
       "id": 9, 
       "question": "What boxer's original name is Cassius Clay?"
     },
-    etc ...
   ], 
   "success": true, 
   "total_questions": 15
@@ -206,7 +216,7 @@ Get list of questions based on category id
     - Response Body:  
     
 ```json
-{
+  {
   "questions": [
     {
       "answer": "The Liver", 
@@ -217,7 +227,7 @@ Get list of questions based on category id
     }, 
   "success": true, 
   "total_questions": 14
-}
+  }
 
 ```
 
