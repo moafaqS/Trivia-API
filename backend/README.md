@@ -225,6 +225,7 @@ Get list of questions based on category id
       "id": 20, 
       "question": "What is the heaviest organ in the human body?"
     }, 
+    ]
   "success": true, 
   "total_questions": 14
   }
